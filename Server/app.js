@@ -8,8 +8,11 @@ var app = express();
 var fs = require("fs");
 var Engine = require('tingodb')();
 var database = new Engine.Db(__dirname + '/db',{});
+
 //the repo database
 var repos = database.collection('repos');
+var users = database.collection('users');
+
 //set up the repo limit
 var RateLimit = require('express-rate-limit');
 //use this is on heroku
