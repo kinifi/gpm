@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
+    "open": "0.0.5",
     "progress": "^1.1.8",
     "prompt": "^1.0.0",
     "requestify": "^0.2.5"
