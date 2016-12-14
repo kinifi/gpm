@@ -94,6 +94,10 @@ function promptForCommand()
     {
       commands.version();
     }
+    else if(result.Command == 'init')
+    {
+      commands.init();
+    }
     else if(result.Command == 'exit')
     {
       console.log('exiting');
