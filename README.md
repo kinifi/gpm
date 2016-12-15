@@ -2,6 +2,7 @@
 a game dev driven package manager. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages
 
 server:
+- /addrepo/ - adds a repo to the database
 - /getpackageinfo/  Searches the database and returns the gpm.json file information for a given package
 - /open/ - gets the github readme url for a given package name from its gpm.json file
 - /install/ - gets the gitrepo pull url from the given package name
