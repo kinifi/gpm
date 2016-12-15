@@ -8,6 +8,7 @@ var open = require("open");
 var init_template = require('./init_template');
 //helps resolve paths for different OS'
 var path = require('path');
+var request = require('request');
 
 
 module.exports = {
@@ -21,7 +22,22 @@ module.exports = {
 
   //lists all the commands
   help: function(){
-    console.log(colors.inverse("cache, help, home, info, init, installglobal, installlocal, list, login, prune, register, search, update, uninstall, version"));
+    console.log(colors.inverse("cache, help, home, info, init, installglobal, installlocal, registerpkg \n list, login, prune, register, search, update, uninstall, version"));
+  },
+
+  registerpkg: function(initfile){
+
+      request({
+          url: "http://josiahchoi.com/api/addrepo",
+          method: "POST",
+          json: true,
+          body: initfile
+      }, function (error, response, body){
+          console.log(response);
+      });
+
+    // console.log("registering pkg");
+
   },
 
   // Opens a package homepage into your favorite browser
@@ -122,6 +138,8 @@ module.exports = {
 
       });
 
+      //send request to server and upload the file
+      registerpkg(JSON.stringify(init_template, null, 4));
 
 
     });
