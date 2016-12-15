@@ -6,7 +6,8 @@ var progressbar = require('progress');
 var open = require("open");
 //the json template for init files
 var init_template = require('./init_template');
-var process = require('process');
+//helps resolve paths for different OS'
+var path = require('path');
 
 
 module.exports = {
@@ -31,7 +32,7 @@ module.exports = {
   },
 
   info: function(){
-    
+
   },
 
   init: function(){
@@ -80,7 +81,11 @@ module.exports = {
             message: 'Bugs link is required'
           },
           website: {
-            description: 'website: '
+            description: 'website (optional)'
+          },
+          filelocation: {
+            description: 'Location to save this file. Usually plugin root directory',
+            required: true
           }
         }
       };
@@ -90,8 +95,6 @@ module.exports = {
       //
       // Log the results and prompt the user if this is okay? If NOT call Init again
       //
-      console.log('Command-line input received:');
-      console.log('  name: ' + result.name);
       //set all the results into the json schema
       init_template.name = result.name;
       init_template.version = result.version;
@@ -106,13 +109,19 @@ module.exports = {
 
       //TODO: ask the user if these results work or not
       // console.log("How does this look?");
-      // console.log(init_template);
-      //write the file to location
-      // fs.writeFile(process.cwd + "/init.json", JSON.stringify(init_template), function(err) {
-      //   if(err) {
-      //       return console.log(err);
-      //   }
-      // });
+
+      //TODO: change the filelocation to the location we are calling this process from.
+
+      //write the file to location JSON.stringify(myData, null, 4)
+      fs.writeFile(path.resolve(result.filelocation, "init.json"), JSON.stringify(init_template, null, 4), function(err) {
+        if(err) {
+            return console.log(err);
+        }
+
+        //call success
+        console.log(colors.inverse("Init File Successfully Created: " + result.filelocation);
+
+      });
 
 
 
