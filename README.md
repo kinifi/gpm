@@ -23,6 +23,7 @@ client:
 - login - login with your given username and password
 - prune - Uninstalls local given package name from cache
 - register - allows to create a new account with a given username and password
+- registerpkg - register an init file with the server. 
 - search - search the package manager database with given keywords
 - update - updates the given package name
 - uninstall - uninstall the given package name from your given folder destination
