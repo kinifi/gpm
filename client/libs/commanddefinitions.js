@@ -117,9 +117,8 @@ module.exports = {
         if(err) {
             return console.log(err);
         }
-
         //call success
-        console.log(colors.inverse("Init File Successfully Created: " + result.filelocation);
+        console.log(colors.inverse("Init File Successfully Created: " + result.filelocation));
 
       });
 
