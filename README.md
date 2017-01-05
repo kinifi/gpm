@@ -1,8 +1,28 @@
 # Game Package Manager
+
 ![Game Package Manager](http://i.imgur.com/dU0w44o.png)
 
+#### A Package Manager for Game Developers. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages and I want to install them where I want to!
 
-### A Package Manager for Game Developers. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages and I want to install them where I want to!
+---
+
+##What is this? 
+
+This is a package manager made for game devs. Most game devs just want to easily pull down plugins and put them in their desired location. NPM makes it convenient by putting everything in a "nodemodules" folder but they aren't writing games for 6+ SKU's on different hardware. We need to easily pull down plugins, scripts, and placeholder art and put them in a location *we choose*.
+
+---
+
+##How does this work?
+
+The first implementation will store gpm.json files into a database the contains a bunch of information but more importantly Git Repo links. When you type commands like 
+
+```
+gpm install steamworksdotnet
+```
+
+The assets for that git repo are stored on github, bitbucket, or whatever else. Soon to be on our own servers. 
+
+---
 
 server:
 - /addrepo/ - adds a repo to the database
@@ -14,6 +34,8 @@ server:
 - /register/ - prompts the user for an email, and password. Creates an account with email, password, hasConfirmed[BOOL], and a confirmation uniqueID. Sends email with uniqueID as url param
 - /confirm-registration/ - find the account in the database with that uniqueID and check to see is hasConfirmed = true or false. Mark as true if hasConfirmed = false
 - /search/ - search the database with given keywords and return a list of 50
+
+---
 
 client:
 - cache - the place locally where global packages are installed for offline use
