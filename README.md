@@ -1,5 +1,8 @@
-# gpm
-a game dev driven package manager. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages
+# Game Package Manager
+![Game Package Manager](http://i.imgur.com/dU0w44o.png)
+
+
+### A Package Manager for Game Developers. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages and I want to install them where I want to!
 
 server:
 - /addrepo/ - adds a repo to the database
@@ -29,3 +32,7 @@ client:
 - update - updates the given package name
 - uninstall - uninstall the given package name from your given folder destination
 - version - logs the version number
+
+Branding: 
+Please use the logo above if you write talk about GPM
+
