@@ -1,8 +1,10 @@
-# Game Package Manager - Engine Agnostic
+# Poly 
+## A Engine Agnostic Game Package Manager
 
 ![Game Package Manager](http://i.imgur.com/dU0w44o.png)
 
-#### A Package Manager for Game Developers. The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages and I want to install them where I want to!
+#### A Package Manager for Game Developers. Have you ever needed a small script or plugin and had to go find it? Poly makes all this easier.
+#### The web has NPM, Bower and a million others. I dont want all of their shit. I want only gamedev related packages and I want to install them where I want to!
 
 ---
 
