@@ -24,6 +24,16 @@ The assets for that git repo are stored on github, bitbucket, or whatever else. 
 
 ---
 
+##How does this work?
+
+Poly - a package that contains assets to be consumed in a game project.
+
+---
+
+##What if I dont have internet?
+
+You can install *polys* locally to a general GPM directory on your computer with the ```gpm install steamworksdotnet -g``` command. This will save that *poly* for later use. So incase you aren't connected to the internet or have slow internet you can call ```gpm install steamworksdotnet -l```
+
 server:
 - /addrepo/ - adds a repo to the database
 - /getpackageinfo/  Searches the database and returns the gpm.json file information for a given package
