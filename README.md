@@ -1,4 +1,4 @@
-# Game Package Manager
+# Game Package Manager - Engine Agnostic
 
 ![Game Package Manager](http://i.imgur.com/dU0w44o.png)
 
@@ -24,7 +24,7 @@ The assets for that git repo are stored on github, bitbucket, or whatever else. 
 
 ---
 
-##How does this work?
+##What is a Poly?
 
 Poly - a package that contains assets to be consumed in a game project.
 
