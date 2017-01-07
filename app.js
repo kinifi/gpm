@@ -4,7 +4,10 @@ var colors = require('colors');
 var progressBar = require('progress');
 var requestify = require('requestify');
 
-//get all of the parameters passed to this script
-process.argv.forEach(function (val, index, array) {
-  console.log(index + ': ' + val);
-});
+//example of command call
+//node app.js install steamworksdotnet -l
+
+for (var i = 0; i < process.argv.length; i++) {
+  //ignore the first and second index
+  console.log(i + ": " + process.argv[i]);
+}
