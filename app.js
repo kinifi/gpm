@@ -1,4 +1,4 @@
-//to make a binary of everything use http://enclosejs.com/
+
 
 var prompt = require('prompt'),
     fs = require('fs'),
@@ -8,6 +8,10 @@ var cacheloc = require('./libs/cachelocation');
 
 //get the command List
 var commands = require('./libs/commanddefinitions');
+
+process.argv.forEach(function (val, index, array) {
+  console.log(index + ': ' + val);
+});
 
 //
 // Start the prompt
@@ -108,4 +112,4 @@ function promptForCommand()
 }
 
 //run the default command function if we have a cache location
-promptForCommand();
+//promptForCommand();
