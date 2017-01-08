@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "node app.js",
-    "jshint": "./node_modules/jshint/bin/jshint app.js"
+    "jshint": "./node_modules/jshint/bin/jshint app.js",
+    "global": "npm install -g",
+    "polyhelp": "poly --help"
   },
   "author": "kinifi",
   "license": "MIT",
