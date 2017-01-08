@@ -22,8 +22,15 @@ program
 program
   .command('install [polyname]')
   .description('installs poly on the working directory')
-  .option("-g, --global", "Installs to a local cache folder for later use instead of pulling from the web")
+  // TODO: finish the prompt for local cache setting and getting
+  // .option("-g, --global", "Installs to a local cache folder for later use instead of pulling from the web")
   .action(function(polyname, options) {
+
+    if(polyname === undefined || polyname === '' || polyname === null)
+    {
+      console.log('Follow [install] command with a [polyname]');
+      return;
+    }
 
     //get the for the poly from the server
     superagent
@@ -34,33 +41,40 @@ program
           console.log(err);
         }
 
-        if(res)
-        {
-          //get the repo url
-          var repourl = res.body[0].repourl;
-          console.log(repourl);
-          //
-          // simplegit()
-          //  .outputHandler(function (command, stdout, stderr) {
-          //     stdout.pipe(process.stdout);
-          //     stderr.pipe(process.stderr);
-          //  })
-          //  //clone into the directory we are in right now
-          //  .clone('https://' + repourl, dirString);
+        if(res) {
+            //get the repo url
+            // console.log(res.body);
+            if(res.body.error)
+            {
+              console.log(colors.inverse("Error: " + res.body.message));
+            }
+            else {
+
+              var repourl = res.body[0].repourl;
+              if(options.global) {
+                  var config = options.global;
+                  console.log(colors.inverse("Install Globally: " + config));
+              }
+              else {
+                  //install locally at current process location
+                  console.log(colors.inverse("Installing locally at current directory"));
+                  simplegit()
+                   .outputHandler(function (command, stdout, stderr) {
+                      stdout.pipe(process.stdout);
+                      stderr.pipe(process.stderr);
+                   })
+                   //clone into the directory we are in right now
+                   .clone(repourl, dirString);
+
+              }
+            }
+
         }
 
       });
 
-    if(options.global) {
-        var config = options.global;
-        console.log("Install Globally: " + config);
-    }
-    else {
 
-    }
-
-
-    console.log('installing ' + polyname);
+    // console.log('installing ' + polyname);
   });
 
 
